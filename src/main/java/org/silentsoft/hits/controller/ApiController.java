@@ -38,7 +38,7 @@ public class ApiController {
         String uri = URLDecoder.decode(String.valueOf(request.getAttribute(UrlPathHelper.PATH_ATTRIBUTE)), StandardCharsets.UTF_8.name()).substring("/api/urns/".length());
         String urn = UniformedResourceNameUtils.normalize(uri);
         if (uri.equals(urn)) {
-            if (urn.length() == 0 || urn.contains(".") == false) {
+            if (urn.length() == 0) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             } else if (urn.length() > 250) {
                 return ResponseEntity.status(HttpStatus.URI_TOO_LONG).build();

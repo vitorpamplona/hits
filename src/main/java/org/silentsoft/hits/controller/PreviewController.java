@@ -82,7 +82,7 @@ public class PreviewController {
         String urn = UniformedResourceNameUtils.normalize(uri.substring(0, uri.lastIndexOf(".preview")));
         String expectedUri = String.format("/%s.preview", urn);
         if (expectedUri.equals(uri)) {
-            if (urn.length() == 0 || urn.contains(".") == false) {
+            if (urn.length() == 0) {
                 sendError(deferredResult, HttpStatus.BAD_REQUEST, "Not a valid URI");
             } else if (urn.length() > 250) {
                 sendError(deferredResult, HttpStatus.URI_TOO_LONG);
