@@ -36,10 +36,10 @@ test("Content", () => {
     expect(screen.getAllByText("Invalid URL")).toHaveLength(3);
 
     userEvent.clear(input);
-    userEvent.type(input, "https://hits.sh/");
-    expect(screen.getByText(`[![Hits](https://hits.sh/hits.sh.svg)](https://hits.sh/hits.sh/)`)).toBeInTheDocument();
-    expect(screen.getByText(`<a href="https://hits.sh/hits.sh/"><img alt="Hits" src="https://hits.sh/hits.sh.svg"/></a>`)).toBeInTheDocument();
-    expect(screen.getByText(`https://hits.sh/hits.sh.svg`)).toBeInTheDocument();
+    userEvent.type(input, "https://counter.amethyst.social/");
+    expect(screen.getByText(`[![Hits](https://counter.amethyst.social/hits.sh.svg)](https://counter.amethyst.social/counter.amethyst.social/)`)).toBeInTheDocument();
+    expect(screen.getByText(`<a href="https://counter.amethyst.social/counter.amethyst.social/"><img alt="Hits" src="https://counter.amethyst.social/hits.sh.svg"/></a>`)).toBeInTheDocument();
+    expect(screen.getByText(`https://counter.amethyst.social/hits.sh.svg`)).toBeInTheDocument();
 
     userEvent.selectOptions(viewType, "today-total");
     userEvent.selectOptions(style, "flat-square");
@@ -54,7 +54,7 @@ test("Content", () => {
     userEvent.type(color, "#000");
     userEvent.type(labelColor, "#fff");
     userEvent.type(logo, "github");
-    expect(screen.getByText(`[![Hits](https://hits.sh/hits.sh.svg?view=today-total&style=flat-square&label=page%20views&extraCount=1000&color=000&labelColor=fff&logo=github)](https://hits.sh/hits.sh/)`)).toBeInTheDocument();
-    expect(screen.getByText(`<a href="https://hits.sh/hits.sh/"><img alt="Hits" src="https://hits.sh/hits.sh.svg?view=today-total&style=flat-square&label=page%20views&extraCount=1000&color=000&labelColor=fff&logo=github"/></a>`)).toBeInTheDocument();
-    expect(screen.getByText(`https://hits.sh/hits.sh.svg?view=today-total&style=flat-square&label=page%20views&extraCount=1000&color=000&labelColor=fff&logo=github`)).toBeInTheDocument();
+    expect(screen.getByText(`[![Hits](https://counter.amethyst.social/hits.sh.svg?view=today-total&style=flat-square&label=page%20views&extraCount=1000&color=000&labelColor=fff&logo=github)](https://counter.amethyst.social/counter.amethyst.social/)`)).toBeInTheDocument();
+    expect(screen.getByText(`<a href="https://counter.amethyst.social/counter.amethyst.social/"><img alt="Hits" src="https://counter.amethyst.social/hits.sh.svg?view=today-total&style=flat-square&label=page%20views&extraCount=1000&color=000&labelColor=fff&logo=github"/></a>`)).toBeInTheDocument();
+    expect(screen.getByText(`https://counter.amethyst.social/hits.sh.svg?view=today-total&style=flat-square&label=page%20views&extraCount=1000&color=000&labelColor=fff&logo=github`)).toBeInTheDocument();
 });

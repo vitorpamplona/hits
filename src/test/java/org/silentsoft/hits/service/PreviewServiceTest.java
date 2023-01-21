@@ -24,13 +24,13 @@ public class PreviewServiceTest {
 
     @Test
     public void previewTest() {
-        Assertions.assertNull(hitsUrnsRepository.findByUrn("preview.hits.sh/test"));
+        Assertions.assertNull(hitsUrnsRepository.findByUrn("preview.counter.amethyst.social/test"));
         Assertions.assertNull(hitsHostsRepository.findByHost("preview.hits.sh"));
 
-        previewService.preview(new HitsItem(null, "preview.hits.sh/test", "total", "flat", "hits", "#4c1", "#555", null, null, 0, null));
+        previewService.preview(new HitsItem(null, "preview.counter.amethyst.social/test", "total", "flat", "hits", "#4c1", "#555", null, null, 0, null));
 
         // preview request is not saved.
-        Assertions.assertNull(hitsUrnsRepository.findByUrn("preview.hits.sh/test"));
+        Assertions.assertNull(hitsUrnsRepository.findByUrn("preview.counter.amethyst.social/test"));
         Assertions.assertNull(hitsHostsRepository.findByHost("preview.hits.sh"));
     }
 

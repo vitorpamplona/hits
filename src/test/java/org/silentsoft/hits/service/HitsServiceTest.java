@@ -36,12 +36,12 @@ public class HitsServiceTest {
 
     @Test
     public void hitsTest() {
-        Assertions.assertNull(hitsUrnsRepository.findByUrn("hits.sh/test"));
+        Assertions.assertNull(hitsUrnsRepository.findByUrn("counter.amethyst.social/test"));
         Assertions.assertNull(hitsHostsRepository.findByHost("hits.sh"));
 
-        hitsService.hits(new HitsItem(null, "hits.sh/test", "total", "flat", "hits", "#4c1", "#555", null, null, 0, null));
+        hitsService.hits(new HitsItem(null, "counter.amethyst.social/test", "total", "flat", "hits", "#4c1", "#555", null, null, 0, null));
         {
-            HitsUrnsEntity urnsEntity = hitsUrnsRepository.findByUrn("hits.sh/test");
+            HitsUrnsEntity urnsEntity = hitsUrnsRepository.findByUrn("counter.amethyst.social/test");
             Assertions.assertNotNull(urnsEntity);
             long urnsCount = hitsUrnsStatisticsRepository.findById_UrnId(urnsEntity.getUrnId()).stream().mapToLong(HitsUrnsStatisticsEntity::getCount).sum();
             Assertions.assertEquals(1, urnsCount);
@@ -52,9 +52,9 @@ public class HitsServiceTest {
             Assertions.assertEquals(1, hostsCount);
         }
 
-        hitsService.hits(new HitsItem(null, "hits.sh/test", "total", "flat", "hits", "#4c1", "#555", null, null, 0, null));
+        hitsService.hits(new HitsItem(null, "counter.amethyst.social/test", "total", "flat", "hits", "#4c1", "#555", null, null, 0, null));
         {
-            HitsUrnsEntity urnsEntity = hitsUrnsRepository.findByUrn("hits.sh/test");
+            HitsUrnsEntity urnsEntity = hitsUrnsRepository.findByUrn("counter.amethyst.social/test");
             Assertions.assertNotNull(urnsEntity);
             long urnsCount = hitsUrnsStatisticsRepository.findById_UrnId(urnsEntity.getUrnId()).stream().mapToLong(HitsUrnsStatisticsEntity::getCount).sum();
             Assertions.assertEquals(2, urnsCount);
