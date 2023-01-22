@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 test("Content", () => {
     render(<BrowserRouter><Content/></BrowserRouter>);
 
-    const input = screen.getByPlaceholderText("https://github.com/silentsoft/hits");
+    const input = screen.getByPlaceholderText("fc631ff9b18820643a422b00c4228ad165f9440dbb36710425d994be79a36833");
     expect(input).toBeInTheDocument();
 
     const viewType = screen.getByDisplayValue("total");
