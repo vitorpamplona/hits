@@ -74,7 +74,7 @@ export default function Content(props) {
     };
 
     const isValidUrl = () => {
-        if (url.trim().length > 0 && url.includes(".") && url[0] !== "." && url[url.length - 1] !== ".") {
+        if (url.trim().length > 0) {
             return true;
         }
         return false;
