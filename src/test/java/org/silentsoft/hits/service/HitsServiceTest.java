@@ -46,7 +46,7 @@ public class HitsServiceTest {
             long urnsCount = hitsUrnsStatisticsRepository.findById_UrnId(urnsEntity.getUrnId()).stream().mapToLong(HitsUrnsStatisticsEntity::getCount).sum();
             Assertions.assertEquals(1, urnsCount);
 
-            HitsHostsEntity hostsEntity = hitsHostsRepository.findByHost("hits.sh");
+            HitsHostsEntity hostsEntity = hitsHostsRepository.findByHost("counter.amethyst.social");
             Assertions.assertNotNull(hostsEntity);
             long hostsCount = hitsHostsStatisticsRepository.findById_HostId(hostsEntity.getHostId()).stream().mapToLong(HitsHostsStatisticsEntity::getCount).sum();
             Assertions.assertEquals(1, hostsCount);
@@ -59,7 +59,7 @@ public class HitsServiceTest {
             long urnsCount = hitsUrnsStatisticsRepository.findById_UrnId(urnsEntity.getUrnId()).stream().mapToLong(HitsUrnsStatisticsEntity::getCount).sum();
             Assertions.assertEquals(2, urnsCount);
 
-            HitsHostsEntity hostsEntity = hitsHostsRepository.findByHost("hits.sh");
+            HitsHostsEntity hostsEntity = hitsHostsRepository.findByHost("counter.amethyst.social");
             Assertions.assertNotNull(hostsEntity);
             long hostsCount = hitsHostsStatisticsRepository.findById_HostId(hostsEntity.getHostId()).stream().mapToLong(HitsHostsStatisticsEntity::getCount).sum();
             Assertions.assertEquals(2, hostsCount);

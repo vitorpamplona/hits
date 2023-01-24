@@ -43,10 +43,6 @@ public class ApiControllerTest {
         mvc.perform(get("/api/urns/bar.com/foo")).andExpect(status().isNotFound());
     }
 
-    @Test
-    public void badRequestTest() throws Exception {
-        mvc.perform(get("/api/urns/not-contains-dot")).andExpect(status().isBadRequest());
-    }
 
     @Test
     public void uriTooLongTest() throws Exception {

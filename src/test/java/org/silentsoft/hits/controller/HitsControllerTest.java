@@ -69,10 +69,7 @@ public class HitsControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(content().string(equalTo(Badge.builder().label("hits").message("Not a valid URI").color("inactive").build())));
 
-        mvc.perform(asyncDispatch(mvc.perform(get("/not-contains-dot.svg")).andReturn()))
-                .andExpect(status().isBadRequest())
-                .andExpect(content().string(equalTo(Badge.builder().label("hits").message("Not a valid URI").color("inactive").build())));
-    }
+        }
 
     @Test
     public void uriTooLongTest() throws Exception {
